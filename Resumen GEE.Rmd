@@ -1,0 +1,37 @@
+---
+title: "RESUMEN GEE"
+author: "Nolberto Comeca"
+date: "31/1/2022"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## RESUMEN DE EXPO DE GEE
+
+```{r cars}
+## Basicamente nuestra exposicion trato respecto al code editor del GEE, las diversas ventanas que encontrabanos, las funciones que cumplian cada una de estas (Scripts, docs, assets, etc) y tambien respecto al lenguaje java script que utilizaba la herramienta para realizar el codigo.
+## Tambien vimos como seleccionar una imagen, para lo cual expusimos los pasos de como hacerlo
+
+##  A continuacion el codigo del ejemplo que realize en mi exposicion 
+// Seleccionar imagenes
+
+// Landsat 5 TM Collection 1 Tier 1 Raw Scenes
+
+var L5 = ee.ImageCollection("LANDSAT/LT05/C01/T1").
+ filterMetadata("CLOUD_COVER", "less_than", 20).
+ filterMetadata("WRS_PATH", "equals", 3).
+ filterMetadata("WRS_ROW", "equals", 69).
+ filterDate("2005-01-01", "2010-01-01")
+print (L5)
+
+// Seleccionar una imagen 
+
+var img = ee.Image("LANDSAT/LT05/C01/T1/LT05_003069_20050716")
+print(img)
+```
+
+
+
